@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     try:
         while True:
-            if GPIO.input(17)
+            if GPIO.input(17) != 0
                 theaterChaseRainbow(strip, 0)
             else
                 colorWipe(strip, Color(0, 0, 0), 0)

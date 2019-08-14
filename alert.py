@@ -74,7 +74,7 @@ if __name__ == '__main__':
         while True:
             print("output of gpio 17:",GPIO.input(17))
             #if
-            theaterChaseRainbow(strip, 0)
+            theaterChaseRainbow(strip, 20)
             #else
             #    colorWipe(strip, Color(0, 0, 0), 0)
     except KeyboardInterrupt:

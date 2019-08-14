@@ -55,7 +55,7 @@ if __name__ == '__main__':
 
     try:
         while True:
-            print('output of gpio 17:',GPIO.input)
+            print("output of gpio 17:",GPIO.input(17))
             #if
             theaterChaseRainbow(strip, 0)
             #else

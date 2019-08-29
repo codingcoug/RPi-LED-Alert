@@ -17,7 +17,7 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 # Intialize the library (must be called once before other functions).
 strip.begin()
 
-def wheel(pos):
+def wheel(pos):+6
     """Generate rainbow colors across 0-255 positions."""
     if pos < 85:
         return Color(pos * 3, 255 - pos * 3, 0)
@@ -49,9 +49,9 @@ def colorWipe(strip, color, wait_ms=50):
 
 
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(25, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #TODO look at proper setup
+GPIO.setup(25, GPIO.OUT, initial=GPIO.LOW) #TODO look at proper setup
 GPIO.add_event_detect(17, GPIO.BOTH)
 #def my_callback():
 #    GPIO.output(25, GPIO.input(17))

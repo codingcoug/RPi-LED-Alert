@@ -50,7 +50,7 @@ def colorWipe(strip, color, wait_ms=50):
 
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_UP) #TODO look at proper setup
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #TODO look at proper setup
 GPIO.setup(13, GPIO.OUT, initial=GPIO.LOW) #TODO look at proper setup
 GPIO.add_event_detect(11, GPIO.BOTH)
 #def my_callback():

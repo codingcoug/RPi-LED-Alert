@@ -71,10 +71,10 @@ if __name__ == '__main__':
     try:
         while True:
             print("output of gpio 11:",GPIO.input(11))
-            #if GPIO.wait_for_edge(11, GPIO.RISING)
-            theaterChaseRainbow(strip, 20)
-            #else
-            #    colorWipe(strip, Color(0, 0, 0), 0)
+            if GPIO.wait_for_edge(11, GPIO.RISING)
+                theaterChaseRainbow(strip, 20)
+            else
+                colorWipe(strip, Color(0, 0, 0), 0)
     except KeyboardInterrupt:
         GPIO.cleanup()
         colorWipe(strip, Color(0, 0, 0), 0)

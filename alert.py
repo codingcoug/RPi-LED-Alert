@@ -23,6 +23,7 @@ def wheel(pos):
         return Color(pos * 3, 255 - pos * 3, 0)
     elif pos < 170:
         pos -= 85
+        
         return Color(255 - pos * 3, 0, pos * 3)
     else:
         pos -= 170
@@ -72,9 +73,11 @@ if __name__ == '__main__':
         while True:
             print("output of gpio 11:",GPIO.input(11))
             if GPIO.input(11):
-                theaterChaseRainbow(strip, 20)
-            else:
+                #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(0, 0, 0), 0)
+            else:
+                #theaterChaseRainbow(strip, 20)
+                colorWipe(strip, Color(255, 0, 0), 0)
     except KeyboardInterrupt:
         GPIO.cleanup()
         colorWipe(strip, Color(0, 0, 0), 0)

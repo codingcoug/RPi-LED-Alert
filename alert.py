@@ -50,12 +50,12 @@ def colorWipe(strip, color, wait_ms=50):
 
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #TODO look at proper setup
-GPIO.setup(25, GPIO.OUT, initial=GPIO.LOW) #TODO look at proper setup
-GPIO.add_event_detect(17, GPIO.BOTH)
+GPIO.setup(11, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) #TODO look at proper setup
+GPIO.setup(13, GPIO.OUT, initial=GPIO.LOW) #TODO look at proper setup
+GPIO.add_event_detect(11, GPIO.BOTH)
 #def my_callback():
-#    GPIO.output(25, GPIO.input(17))
-#GPIO.add_event_callback(17, my_callback)
+#    GPIO.output(13, GPIO.input(11))
+#GPIO.add_event_callback(11, my_callback)
 
 
 if __name__ == '__main__':
@@ -70,8 +70,8 @@ if __name__ == '__main__':
 
     try:
         while True:
-            print("output of gpio 17:",GPIO.input(17))
-            #if GPIO.wait_for_edge(17, GPIO.RISING)
+            print("output of gpio 11:",GPIO.input(11))
+            #if GPIO.wait_for_edge(11, GPIO.RISING)
             theaterChaseRainbow(strip, 20)
             #else
             #    colorWipe(strip, Color(0, 0, 0), 0)

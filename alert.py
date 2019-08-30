@@ -76,8 +76,8 @@ if __name__ == '__main__':
                 #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(0, 0, 0), 0)
             else:
-                #theaterChaseRainbow(strip, 20)
-                colorWipe(strip, Color(255, 0, 0), 0)
+                theaterChaseRainbow(strip, 20)
+                #colorWipe(strip, Color(255, 0, 0), 0)
     except KeyboardInterrupt:
         GPIO.cleanup()
         colorWipe(strip, Color(0, 0, 0), 0)

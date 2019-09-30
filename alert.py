@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 from neopixel import *
 import argparse
-from webrequest.py import getTaskSize
+from webrequest import getTaskSize
 
 # LED strip configuration:
 LED_COUNT      = 71      # Number of LED pixels.
@@ -82,9 +82,9 @@ if __name__ == '__main__':
             if GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(0, 0, 0), 0)
-            elif tasks.idamount() < getTaskSize():
+            elif tasks.idamount < getTaskSize():
                 theaterChaseRainbow(strip, 20)
-            elif tasks.idamount() > getTaskSize():
+            elif tasks.idamount > getTaskSize():
                 setidamount(getTaskSize())
             else:
                 theaterChaseRainbow(strip, 20)

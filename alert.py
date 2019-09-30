@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 import time
 from neopixel import *
 import argparse
+from webrequest.py import getTaskSize
+
 # LED strip configuration:
 LED_COUNT      = 71      # Number of LED pixels.
 LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
@@ -16,6 +18,11 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 # Intialize the library (must be called once before other functions).
 strip.begin()
+
+class tasks:
+    idamount = getTaskSize()
+    def setidamount(newamt):
+        idamount = newamt
 
 def wheel(pos):
     """Generate rainbow colors across 0-255 positions."""
@@ -75,6 +82,10 @@ if __name__ == '__main__':
             if GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(0, 0, 0), 0)
+            elif tasks.idamount() < getTaskSize():
+                theaterChaseRainbow(strip, 20)
+            elif tasks.idamount() > getTaskSize():
+                setidamount(getTaskSize())
             else:
                 theaterChaseRainbow(strip, 20)
                 #colorWipe(strip, Color(255, 0, 0), 0)

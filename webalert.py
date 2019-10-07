@@ -92,10 +92,13 @@ if __name__ == '__main__':
                     colorWipe(strip, Color(0, 0, 0), 0)
                     time.sleep(1)
             elif numTasks.idamount < getTaskSize():
+                numTasks.setidamount(getTaskSize())
+                print("task size increased to ", numTasks.idamount)
                 for i in range(0,5,1): 
-                    numTasks.setidamount(getTaskSize())
-                    print("task size increased to ", numTasks.idamount)
-                    theaterChaseRainbow(strip, 20)
+                    colorWipe(strip, Color(255, 0, 0), 0)
+                    time.sleep(1)
+                    colorWipe(strip, Color(0, 0, 0), 0)
+                    time.sleep(1)
             elif numTasks.idamount > getTaskSize():
                 numTasks.setidamount(getTaskSize())
                 print("task size decreased to ", numTasks.idamount)

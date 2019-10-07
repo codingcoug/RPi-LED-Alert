@@ -84,16 +84,19 @@ if __name__ == '__main__':
             #test = GPIO.input(11)
             #print(test)
             time.sleep(10)
+            x = 5
             if not GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)
-                colorWipe(strip, Color(255, 0, 0), 0)
-                time.sleep(1)
-                colorWipe(strip, Color(0, 0, 0), 0)
-                time.sleep(1)
+                for i in x:
+                    colorWipe(strip, Color(255, 0, 0), 0)
+                    time.sleep(1)
+                    colorWipe(strip, Color(0, 0, 0), 0)
+                    time.sleep(1)
             elif numTasks.idamount < getTaskSize():
-                numTasks.setidamount(getTaskSize())
-                print("task size increased to ", numTasks.idamount)
-                theaterChaseRainbow(strip, 20)
+                for i in x: 
+                    numTasks.setidamount(getTaskSize())
+                    print("task size increased to ", numTasks.idamount)
+                    theaterChaseRainbow(strip, 20)
             elif numTasks.idamount > getTaskSize():
                 numTasks.setidamount(getTaskSize())
                 print("task size decreased to ", numTasks.idamount)

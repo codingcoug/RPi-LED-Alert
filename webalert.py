@@ -20,9 +20,10 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 strip.begin()
 
 class tasks:
-    idamount = getTaskSize()
-    def setidamount(newamt):
-        idamount = newamt
+    def __init__(self):
+        self.idamount = getTaskSize()
+    def setidamount(selfnewamt):
+        self.idamount = selfnewamt
 
 def wheel(pos):
     """Generate rainbow colors across 0-255 positions."""
@@ -68,6 +69,7 @@ GPIO.add_event_detect(11, GPIO.BOTH)
 
 if __name__ == '__main__':
 
+    numTasks = tasks()
     # Process arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
@@ -81,20 +83,20 @@ if __name__ == '__main__':
             #print("output of gpio 11:",GPIO.input(11))
             #test = GPIO.input(11)
             #print(test)
- #           time.sleep(10)
+            time.sleep(10)
             if not GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(255, 0, 0), 0)
                 time.sleep(1)
                 colorWipe(strip, Color(0, 0, 0), 0)
                 time.sleep(1)
-#            elif tasks.idamount < getTaskSize():
-#                tasks.setidamount(getTaskSize())
-#                print("task size increased to ", tasks.idamount)
-#                theaterChaseRainbow(strip, 20)
-#            elif tasks.idamount > getTaskSize():
-#                tasks.setidamount(getTaskSize())
-#                print("task size decreased to ", tasts.idamount)
+            elif numTasks.idamount < getTaskSize():
+                numTasks.setidamount(getTaskSize())
+                print("task size increased to ", numTasks.idamount)
+                theaterChaseRainbow(strip, 20)
+            elif numTasks.idamount > getTaskSize():
+                numTasks.setidamount(getTaskSize())
+                print("task size decreased to ", numTasks.idamount)
             else:
                 #theaterChaseRainbow(strip, 20)
                 colorWipe(strip, Color(0, 0, 0), 0)

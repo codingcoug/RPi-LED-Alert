@@ -86,7 +86,7 @@ if __name__ == '__main__':
             time.sleep(10)
             if not GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)
-                while i in range(1,5,1):
+                for i in range(1,5,1):
                     colorWipe(strip, Color(255, 0, 0), 0)
                     time.sleep(1)
                     colorWipe(strip, Color(0, 0, 0), 0)

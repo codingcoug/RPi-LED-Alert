@@ -83,8 +83,7 @@ if __name__ == '__main__':
             #print("output of gpio 11:",GPIO.input(11))
             #test = GPIO.input(11)
             #print(test)
-            x = print(getTaskSize())
-            print(x)
+            print(getTaskSize())
             time.sleep(10)
             if not GPIO.input(11):
                 #theaterChaseRainbow(strip, 20)

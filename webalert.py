@@ -3,7 +3,7 @@ import time
 from neopixel import *
 import argparse
 from webrequest import getTaskSize
-import pygame 
+#import os, sys 
 
 # LED strip configuration:
 LED_COUNT      = 71      # Number of LED pixels.
@@ -69,14 +69,15 @@ GPIO.add_event_detect(11, GPIO.BOTH)
 
 
 if __name__ == '__main__':
-    pygame.mixer.init()
+#    pygame.mixer.init()
     numTasks = tasks()
-    print(numTasks.idamount + " is the initial value")
+    print(numTasks.idamount," is the initial value")
     # Process arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
     args = parser.parse_args()
-
+#    os.system('omxplayer sound.mp3')
+#    sys.exit()
 
     print ('Press Ctrl-C to quit.')
 

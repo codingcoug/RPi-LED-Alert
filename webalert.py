@@ -24,7 +24,7 @@ strip.begin()
 class tasks:
     def __init__(self):
         self.idamount = getTaskSize()
-    def setidamount(selfnewamt):
+    def setidamount(self,selfnewamt):
         self.idamount = selfnewamt
 
 def wheel(pos):
@@ -90,9 +90,10 @@ if __name__ == '__main__':
             print(getTaskSize())
             time.sleep(10)
             if not GPIO.input(11):
-                playsound('/home/pi/Downloads/Git/rpi_ws281x/python/examples/sound.mp3')
+#                playsound('/home/pi/Downloads/Git/rpi_ws281x/python/examples/sound.mp3')
                 #theaterChaseRainbow(strip, 20)
                 for i in range(0,5,1):
+
                     colorWipe(strip, Color(255, 0, 0), 0)
                     time.sleep(1)
                     colorWipe(strip, Color(0, 0, 0), 0)
@@ -100,7 +101,7 @@ if __name__ == '__main__':
             elif numTasks.idamount < getTaskSize():
                 numTasks.setidamount(getTaskSize())
                 print("task size increased to ", numTasks.idamount)
-                playsound('sound.mp3')
+#                playsound('sound.mp3')
                 for i in range(0,5,1): 
                     colorWipe(strip, Color(255, 0, 0), 0)
                     time.sleep(1)
@@ -108,7 +109,7 @@ if __name__ == '__main__':
                     time.sleep(1)
             elif numTasks.idamount > getTaskSize():
                 numTasks.setidamount(getTaskSize())
-                playsound('sound.mp3')
+#                playsound('sound.mp3')
                 print("task size decreased to ", numTasks.idamount)
             else:
                 #theaterChaseRainbow(strip, 20)

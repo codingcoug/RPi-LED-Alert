@@ -93,7 +93,7 @@ if __name__ == '__main__':
 #                playsound('/home/pi/Downloads/Git/rpi_ws281x/python/examples/sound.mp3')
                 #theaterChaseRainbow(strip, 20)
                 for i in range(0,5,1):
-
+                    numTasks.idamount = numTasks.idamount + 1
                     colorWipe(strip, Color(255, 0, 0), 0)
                     time.sleep(1)
                     colorWipe(strip, Color(0, 0, 0), 0)
